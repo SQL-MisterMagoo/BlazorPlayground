@@ -7,6 +7,7 @@
     --accent-color: rgba(90,90,183,var(--accent-alpha));
     --heading-bgcolor: var(--accent-color);
     --heading-color: rgba(255,240,242,0.9);
+    --heading-link-color: rgba(255,240,242,0.4) ;
     --nav-link-color: var(--font-color);
     --nav-border-radius: 4px;
     --nav-height: 3rem;
@@ -46,6 +47,17 @@ app {
     .heading h1 {
         text-align: center;
     }
+
+    .heading a {
+        cursor: pointer;
+        color: var(--heading-link-color);
+        position: absolute;
+        right: 1vmin;
+    }
+
+        .heading a:hover {
+            color: var(--heading-color);
+        }
 
 .nav-menu {
     position: relative;
