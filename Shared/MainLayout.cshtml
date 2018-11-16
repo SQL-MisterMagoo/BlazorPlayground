@@ -1,24 +1,43 @@
 @inherits BlazorLayoutComponent
+@using Microsoft.AspNetCore.Blazor.Components
+@using Microsoft.AspNetCore.Blazor.Services
 
-<div class="sidebar">
-    <NavMenu />
+<div class="heading">
+    <h1>Blazor Cascade Demos</h1>
 </div>
+<CascadingValue Name="NavMenuController" Value="@ActivePage">
+    <NavMenu />
 
-<div class="main">
-    <div class="top-row px-4">
-        <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
-    </div>
-
-    <div class="content px-4">
+    <div class="body">
         @Body
     </div>
-</div>
+</CascadingValue>
 
-@*<div class="footer">
-    <Traffic>
-        <Parts Context="traffic">
-            <span>Traffic : @traffic.Bytes.ToString("N0") Bytes</span>
-            <span>Speed : @traffic.BytesPerSecond.ToString("N0") B/s</span>
-        </Parts>
-    </Traffic>
-</div>*@
+@functions
+{
+bool ActivePage = false;
+[Inject] IUriHelper UriHelper { get; set; }
+
+protected override void OnInit()
+{
+    base.OnInit();
+    UriHelper.OnLocationChanged += OnLocationChanged;
+    OnLocationChanged(this, UriHelper.GetAbsoluteUri());
+}
+
+private void OnLocationChanged(object sender, string e)
+{
+    var path = UriHelper.ToBaseRelativePath(UriHelper.GetBaseUri(), e);
+
+    if (string.IsNullOrWhiteSpace(path) || path.Equals("/", StringComparison.Ordinal))
+    {
+        ActivePage = false;
+    }
+    else
+    {
+        ActivePage = true;
+    }
+    StateHasChanged();
+}
+
+}
