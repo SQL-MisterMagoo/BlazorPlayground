@@ -1,0 +1,66 @@
+﻿
+@keyframes loading-animation {
+    0% {
+        margin-left: -50%;
+        transform: translateY(-10%) perspective(5cm) rotate3d(1,0,0,25deg);
+    }
+
+    100% {
+        font-size: 20%;
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: 5%;
+        margin-left: -50%;
+        transform: translateY(-50%) perspective(5cm) rotate3d(1,0,0,25deg);
+    }
+}
+
+@keyframes loading-animation-text {
+    0% {
+        padding-left: 37%;
+    }
+
+    100% {
+        padding-left: 45%;
+    }
+}
+
+/*app:empty::before {
+    content: "Blazor";
+    position: absolute;
+    top: 40vw;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-shadow: 1em 1em 0.2em yellow;
+    font-size: 10em;
+    padding: 0;
+    color: Blue;
+    animation: loading-animation alternate 5s infinite;
+    background-color: rgba(0,0,0,0.2);
+}
+*/
+
+app:empty {
+    background-color: black;
+    /* Flexbox to center the entire element on the screen */
+    color: #feda4a;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 400%;
+    font-weight: 600;
+    letter-spacing: 6px;
+    line-height: 150%;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    height: 200%;
+    width: 200%;
+    margin-left: -50%;
+    transform: translateY(-10%) perspective(5cm) rotate3d(1,0,0,25deg);
+    animation: loading-animation 15s;
+}
+
+    app:empty::before {
+        content: "Blazor Playground Loading";
+        animation: loading-animation-text 15s;
+    }
