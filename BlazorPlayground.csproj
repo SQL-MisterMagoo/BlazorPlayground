@@ -8,12 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BlazorClock" Version="1.0.0" />
-    <PackageReference Include="BlazorFlying" Version="1.0.0" />
-    <PackageReference Include="BlazorForm" Version="1.0.0" />
+    <PackageReference Include="BlazorBoundComponent" Version="1.0.2" />
+    <PackageReference Include="BlazorClock" Version="1.0.3" />
+    <PackageReference Include="BlazorEditorFor" Version="1.0.3" />
+    <PackageReference Include="BlazorFlying" Version="1.0.2" />
+    <PackageReference Include="BlazorForm" Version="1.0.3" />
     <PackageReference Include="BlazorTraffic" Version="1.0.0" />
-    <PackageReference Include="BlazorTree" Version="1.0.0" />
-    <PackageReference Include="Bletris" Version="0.1.5" />
+    <PackageReference Include="BlazorTree" Version="1.0.3" />
+    <PackageReference Include="Bletris" Version="1.0.3" />
     <PackageReference Include="GenFu" Version="1.4.22" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Browser" Version="0.7.0" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="0.7.0" PrivateAssets="all" />
